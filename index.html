@@ -3,27 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SovereignMind — Reclaim Your Focus</title>
+    <title>SovereignMind — Digital Focus Protocol</title>
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="SovereignMind — Reclaim Your Attention">
+    <meta property="og:description" content="A digital focus protocol to defeat algorithmic addiction and protect deep work.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+
     <style>
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
-            --accent-color: #58a6ff;
-            --text-color: #c9d1d9;
-            --text-bright: #ffffff;
             --border-color: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-color: #58a6ff;
+            --accent-hover: #1f6feb;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-color);
+            color: var(--text-primary);
+            font-family: var(--font-family);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -32,120 +44,140 @@
         }
 
         .container {
-            max-width: 650px;
+            max-width: 600px;
             width: 100%;
             text-align: center;
-            background: var(--card-bg);
-            padding: 40px 30px;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Logo + Brand Header Styling */
+        .header-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .brand {
             font-size: 2.2rem;
             font-weight: 700;
-            color: var(--text-bright);
-            margin-bottom: 10px;
+            color: #ffffff;
             letter-spacing: -0.5px;
         }
 
-        .tagline {
-            font-size: 1.1rem;
+        .hero-title {
+            font-size: 1.5rem;
             color: var(--accent-color);
-            margin-bottom: 25px;
-            font-weight: 500;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .description {
-            font-size: 1rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
             line-height: 1.6;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
-        .features {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: 1fr;
             gap: 15px;
             margin-bottom: 35px;
             text-align: left;
         }
 
         .feature-card {
-            background: #21262d;
-            padding: 15px;
-            border-radius: 8px;
+            background-color: var(--card-bg);
             border: 1px solid var(--border-color);
+            padding: 18px 20px;
+            border-radius: 8px;
         }
 
         .feature-card h3 {
-            font-size: 0.95rem;
-            color: var(--text-bright);
+            font-size: 1.1rem;
+            color: #ffffff;
             margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .feature-card p {
-            font-size: 0.85rem;
-            color: #8b949e;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
         }
 
-        .form-group {
+        .waitlist-form {
             display: flex;
             flex-direction: column;
             gap: 12px;
+            margin-bottom: 20px;
         }
 
-        input[type="email"] {
+        .email-input {
             width: 100%;
             padding: 14px;
-            border-radius: 8px;
+            background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            background: #0d1117;
-            color: var(--text-bright);
+            border-radius: 6px;
+            color: #ffffff;
             font-size: 1rem;
             outline: none;
             transition: border-color 0.2s;
         }
 
-        input[type="email"]:focus {
+        .email-input:focus {
             border-color: var(--accent-color);
         }
 
-        button {
-            width: 100%;
+        .submit-btn {
             padding: 14px;
-            border-radius: 8px;
-            border: none;
             background-color: var(--accent-color);
-            color: #0d1117;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: opacity 0.2s;
+            transition: background-color 0.2s;
         }
 
-        button:hover {
-            opacity: 0.9;
+        .submit-btn:hover {
+            background-color: var(--accent-hover);
         }
 
         .footer-note {
-            font-size: 0.8rem;
-            color: #8b949e;
-            margin-top: 15px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1 class="brand">SovereignMind</h1>
-        <p class="tagline">Reclaim Your Attention from Digital Distraction</p>
+        
+        <!-- Logo + Brand Name Header -->
+        <div class="header-brand">
+            <img src="logo.png" alt="SovereignMind Logo" class="logo-img">
+            <h1 class="brand">SovereignMind</h1>
+        </div>
+
+        <h2 class="hero-title">Reclaim Your Attention from Digital Distraction</h2>
         
         <p class="description">
-            Break free from algorithmic addiction and regain control of your focus. SovereignMind is designed to help you build deep, uninterrupted thinking habits in a noisy world.
+            Break free from algorithmic addiction and regain control of your focus. 
+            SovereignMind is designed to help you build deep, uninterrupted thinking habits in a noisy world.
         </p>
 
-        <div class="features">
+        <div class="features-grid">
             <div class="feature-card">
                 <h3>🛡️ Anti-Algorithm Filter</h3>
                 <p>Block addictive feeds and regain focus.</p>
@@ -160,12 +192,14 @@
             </div>
         </div>
 
-        <form action="https://formspree.io/f/xvkzejzp" method="POST" class="form-group">
-            <input type="email" name="email" placeholder="Enter your email address" required>
-            <button type="submit">Join the Waitlist</button>
+        <!-- Formspree Endpoint Integrated -->
+        <form action="https://formspree.io/f/xvkzejzp" method="POST" class="waitlist-form">
+            <input type="email" name="email" placeholder="Enter your email address" required class="email-input">
+            <button type="submit" class="submit-btn">Join the Waitlist</button>
         </form>
 
         <p class="footer-note">Be among the first 100 early adopters to get exclusive access.</p>
+
     </div>
 
 </body>
